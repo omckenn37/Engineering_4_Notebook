@@ -7,4 +7,6 @@ In this assignment, we created a simple dice rolling program.
 
 Here is a screenshot of this program in action:
 
-<img src="media/hello_python_screenshot.png" width="300">
+<img src="Python/media/hello_python_screenshot.png" width="500">
+
+This assignment was pretty easy. It involved a while loop with a couple of if statements to check what the users's input was. For whatever reason, the one time I screenshot my output it happened to randomly select to print two sixes then two twos then two fours in a row.
