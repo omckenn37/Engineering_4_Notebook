@@ -16,3 +16,4 @@ while run:
 	else:
 		print("error") # if input isn't an "x" or enter, prints error
 		run = False
+
