@@ -20,7 +20,7 @@ In this assignment, we created a simple calculator funciton that does different 
 
 Here is a screenshot of this program in action:
 
-<img src="Python/media/hello_python_screenshot.png" width="500">
+<img src="Python/media/Calculato_screenshot.png" width="500">
 
 #### Lessons Learned
 
