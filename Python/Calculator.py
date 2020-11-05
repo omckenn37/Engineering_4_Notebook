@@ -1,3 +1,6 @@
+# Calculator
+# Written by Owen McKenney
+
 def doMath(a, b, operation): # the doMath() function takes inputs a, b, and operation. a is the first number, b is the second number, and operation refers to what operation needs to be performed
     # this series of if statements checks to see what operation needs to be performed
     if operation == 1:
@@ -14,7 +17,7 @@ def doMath(a, b, operation): # the doMath() function takes inputs a, b, and oper
 a = int(input("Enter first number : ")) # these two lines get the user input
 b = int(input("Enter second number : "))
 
-print("Sum : " + doMath(a,b,1)) # these lines print out the sum, differene, product, quotient, and modulo of the numbers
+print("Sum : " + doMath(a,b,1)) # these lines print out the sum, difference, product, quotient, and modulo of the numbers
 print("Difference : " + doMath(a,b,2))
 print("Product : " + doMath(a,b,3))
 print("Quotient : " + doMath(a,b,4))
