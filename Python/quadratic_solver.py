@@ -19,6 +19,5 @@ a = int(input("a : "))
 b = int(input("b : "))
 c = int(input("c : "))
 
-r = solve(a, b, c)
-print(r[0], r[1]) # this prints out the roots
+print(solve(a,b,c)[0], solve(a,b,c)[1]) # this prints out the roots
 
