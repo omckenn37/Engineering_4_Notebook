@@ -35,4 +35,6 @@ Here is a screenshot of this program in action:
 
 <img src="Python/media/quadratic_solver_screenshot.png" width="500">
 
+The first quadratic has two real roots, 2 and -2, while the second quadratic had no real roots. 
+
 #### Lessons Learned
