@@ -33,6 +33,6 @@ In this assignment, we created a calculator to find the roots for any given quad
 
 Here is a screenshot of this program in action:
 
-<img src="Python/media/Calculato_screenshot.png" width="500">
+<img src="Python/media/quadratic_solver_screenshot.png" width="500">
 
 #### Lessons Learned
