@@ -38,3 +38,5 @@ Here is a screenshot of this program in action:
 The first quadratic has two real roots, 2 and -2, while the second quadratic had no real roots. 
 
 #### Lessons Learned
+
+When coding this assignment I tried to create the least amount of variables possible. This is why in my function solve(), I only have one list called roots which either gets set to the two roots or two strings which says there are no roots. One issue I had was accessing the contents of the list once it had been returned from my solve() function. I realized that by adding a [0] or a [1] at the end of the called function, I could access either the 1st or 2nd element of that list. This helped me print out the correct values. 
