@@ -40,3 +40,16 @@ The first quadratic has two real roots, 2 and -2, while the second quadratic had
 #### Lessons Learned
 
 When coding this assignment I tried to create the least amount of variables possible. This is why in my function solve(), I only have one list called roots which either gets set to the two roots or two strings which says there are no roots. One issue I had was accessing the contents of the list once it had been returned from my solve() function. I realized that by adding a [0] or a [1] at the end of the called function, I could access either the 1st or 2nd element of that list. This helped me print out the correct values. 
+
+### Strings and Loops
+#### Description
+
+In this assignment, we created a program which takes in a string and prints out each letter in that string. It also prints a minus sign for every whitespace in that string.
+
+Here is a screenshot of this program in action:
+
+<img src="Python/media/string_splitter_screenshot.png" width="500">
+
+#### Lessons Learned
+
+There were a bunch of different ways that this assignment could have been completed. You could have actually gotten the same result without using any lists at all. In python, you are able to print out specific letters in a string which in a way defeats the purpose of converting the string to a list. In my version, I opted to convert my string into a list anways and then used a for loop to print each element in that list. To convert the whitespaces to minus signs, I used the replace() function in python which takes two parameters: the string you want replaced and what you will replace it with. I had used this before, but this assignment reminded me that in order to use it you have to make a new variable or set your previous variable equal to itself in order for the replace() function to work. 
