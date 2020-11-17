@@ -1,3 +1,6 @@
+# Hangman
+# Program by Owen McKenney
+
 word = list(input("Player 1, what's the word? ").lower())
 print("\n" * 10)
 
@@ -10,14 +13,18 @@ print(guess_list)
 
 #while guess_list != word:
 
-for x in range(0,1):
+while guess_list != word:
     guess = str(input("Player 2, guess a letter: ").lower())
 
     for i in word:
         if(i == guess):
-            guess_list.insert(word.index(guess), guess)
-            guess_list.pop(word.index(guess) + 1)
+            indices = [i for i, x in enumerate(word) if x == guess]
 
+            for j in range(0, len(indices)):
+                guess_list.insert(indices[j], guess)
+                guess_list.pop(indices[j] + 1)
 
-print(guess_list)
+            print(guess_list)
+
+       
 
