@@ -1,42 +1,41 @@
 # Hangman
 # Program by Owen McKenney
 
-word = list(input("Player 1, what's the word? ").lower())
+word = list(input("Player 1, what's the word? ").upper())
 print("\n" * 20)
 
-guess_list = []
+guessed = "_" * len(word)
+guessed = list(guessed)
+first_guessed = []
+letter = input("Player 2, guess a letter: ")
 
-for i in range(0, len(word)):
-    guess_list.append("_")
+while True:
+    if letter.upper() in first_guessed:
+        letter = ""
+        print("Player 2, you already guessed this letter")
+    elif letter.upper() in word:
+        index = word.index(letter.upper())
+        guessed[index] = letter.upper()
+        word[index] = "_"
 
-print(guess_list)
-
-while guess_list != word:
-    valid_guess = False
-    contains = False
-    guess = str(input("\nPlayer 2, guess a letter: ").lower())
-
-    for t in guess_list:
-        if guess == t:
-            valid_guess = True
-           
-    for i in word:
-        if i == guess and valid_guess == False:
-            contains = True
-    
-    if contains == True:
-        indices = [i for i, x in enumerate(word) if x == guess]
-
-        for j in range(0, len(indices)):
-            guess_list.insert(indices[j], guess)
-            guess_list.pop(indices[j] + 1)
-        
-        for x in range(0, len(guess_list)):
-            print(guess_list[x], end=" ")
-            
-    elif valid_guess == False:
-        print("Guess again!")
     else:
-        print("You already guessed that letter")
+        print("".join(guessed))
+
+        if letter is not "":
+            first_guessed.append(letter.upper())
+        letter = input("Player 2, guess a letter: ")
+
+    if "_" not in guessed:
+        print(word)
+        print("Player 2, you won")
+
+        break
+
+
+
+
+
+
+        
        
 
