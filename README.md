@@ -70,10 +70,14 @@ Here's what happens when player 2 guesses the right letters and wins the game:
 Here's a picture of the thing printed once you guess 5 wrong letters, as well as the image it is based off of:
 
 <p float="left">
-   
-  <img src="Python/media/hangman4.png" width="100" />
+  <img src="Python/media/hangman4.png" width="500" />
+  <img src="Python/media/graham.png" width="300" />
 </p>
+
+The program also prints sections of the graham.txt file every time player 2 guesses wrong, it was just hard to screenshot so I only includede the final product.
 
 #### Lessons Learned
 
 This assignment was definitely harder than the others. It was quite a bit longer than the others and involved for loops, if statements, lists, strings, and a  bunch of ther stuff. For me, the biggest problem I ran into was trying to find all indices of a letter in the word. For example, words like "cool" or "letter" contain multiple instances of the same letter. The issue was that the code I had written only recognized the first instance of this letter, which would ruin the program becuase the second instance of that letter would essentially be unguessable making the game go on forever. I solved this problem by changing my index variable to a list and using enumerate() to find all instances of the letter. 
+
+For this assignment, I also decided to use a text file to print a picture rather than make an array or list and print sections of that. I figured it would be easier and cleaner to use a text file, plus it was easier to make this text file anything that I wanted it to be. I used a [image to ASCII converter](https://manytools.org/hacker-tools/convert-images-to-ascii-art/) to convert the picture of Graham into ASCII characters that could be printed in a terminal window. Once I had this file, I added it to my Python folder via file upload and pulled those changes to my pi so the file was on my pi. After that, all I had to do was figure out how to use the built in text file commands that python has such as open() and readline().
