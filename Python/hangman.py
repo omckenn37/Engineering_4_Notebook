@@ -26,12 +26,14 @@ while True:
 
     elif letter.upper() in word:
         already_guessed.append(letter.upper())
-        index = word.index(letter.upper())
-        guessed[index] = letter.upper()
-        word[index] = "_"
+        indices = [i for i, x in enumerate(word) if x == letter.upper()]
+        for x in range(0, len(indices)):
+            guessed[indices[x]] = letter.upper()
+            word[indices[x]] = "_"
         print("".join(guessed))
 
-    elif letter.upper() not in word:
+
+    else:
         already_guessed.append(letter.upper())
         num_guesses -= 1
         print("Wrong! Guesses left: " + str(num_guesses))
