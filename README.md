@@ -63,9 +63,10 @@ In this assignment, we created a 2 player hangman program. Player 1 picks a word
 
 Here are some screenshots of this program in action:
 
-<img src="Python/media/string_splitter_screenshot.png" width="500">
-<img src="Python/media/string_splitter_screenshot.png" width="500">
-<img src="Python/media/string_splitter_screenshot.png" width="500">
+<img src="Python/media/hangman1.png" width="500">
+<img src="Python/media/hangman2.png" width="500">
+<img src="Python/media/hangman3.png" width="500">
+<img src="Python/media/hangman4.png" width="500">
 
 #### Lessons Learned
 
