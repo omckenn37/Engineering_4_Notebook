@@ -18,22 +18,22 @@ def draw(n):
 
 while True:
     print("-" * 40)
-    letter = input("Player 2, guess a letter: ")
+    letter = input("Player 2, guess a letter: ").upper()
 
-    if letter.upper() in already_guessed: # checks to see if the letter has already been guesses
+    if letter in already_guessed: # checks to see if the letter has already been guesses
         letter = ""
         print("Player 2, you already guessed this letter")
 
-    elif letter.upper() in word: # checks to see if the letter in in the word
-        already_guessed.append(letter.upper())
-        indices = [i for i, x in enumerate(word) if x == letter.upper()] # finds all indices of letter in word
+    elif letter in word: # checks to see if the letter in in the word
+        already_guessed.append(letter)
+        indices = [i for i, x in enumerate(word) if x == letter] # finds all indices of letter in word
         for x in range(0, len(indices)): # loops through the indices list
-            guessed[indices[x]] = letter.upper() # adds each index to guessed
+            guessed[indices[x]] = letter # adds each index to guessed
             word[indices[x]] = "_" # sets indices in word to _
         print("".join(guessed)) # prints out the guessed word so far
 
     else: # this runs if the guessed letter is not in word
-        already_guessed.append(letter.upper()) 
+        already_guessed.append(letter) 
         num_guesses -= 1
         print("Wrong! Guesses left: " + str(num_guesses)) # prints out number of guesses left
         print("")
