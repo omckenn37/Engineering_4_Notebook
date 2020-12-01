@@ -53,3 +53,20 @@ Here is a screenshot of this program in action:
 #### Lessons Learned
 
 There were a bunch of different ways that this assignment could have been completed. You could have actually gotten the same result without using any lists at all. In python, you are able to print out specific letters in a string which in a way defeats the purpose of converting the string to a list. In my version, I opted to convert my string into a list anways and then used a for loop to print each element in that list. To convert the whitespaces to minus signs, I used the replace() function in python which takes two parameters: the string you want replaced and what you will replace it with. I had used this before, but this assignment reminded me that in order to use it you have to make a new variable or set your previous variable equal to itself in order for the replace() function to work. 
+
+### Hangman
+#### Description
+
+In this assignment, we created a 2 player hangman program. Player 1 picks a word while player 2 tries to guess the word. 
+
+#### Pictures 
+
+Here are some screenshots of this program in action:
+
+<img src="Python/media/string_splitter_screenshot.png" width="500">
+<img src="Python/media/string_splitter_screenshot.png" width="500">
+<img src="Python/media/string_splitter_screenshot.png" width="500">
+
+#### Lessons Learned
+
+This assignment was definitely harder than the others. It was quite a bit longer than the others and involved for loops, if statements, lists, strings, and a  bunch of ther stuff. For me, the biggest problem I ran into was trying to find all indices of a letter in the word. For example, words like "cool" or "letter" contain multiple instances of the same letter. The issue was that the code I had written only recognized the first instance of this letter, which would ruin the program becuase the second instance of that letter would essentially be unguessable making the game go on forever. I solved this problem by changing my index variable to a list and using enumerate() to find all instances of the letter. 
