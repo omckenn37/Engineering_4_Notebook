@@ -75,7 +75,7 @@ Here's a picture of the thing printed once you guess 5 wrong letters, as well as
   <img src="Python/media/graham.png" width="300" />
 </p>
 
-The program also prints sections of the graham.txt file every time player 2 guesses wrong, it was just hard to screenshot so I only included the final product.
+The program also prints sections of the [graham.txt](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/graham.txt) file every time player 2 guesses wrong, it was just hard to screenshot so I only included the final product.
 
 #### Lessons Learned
 
