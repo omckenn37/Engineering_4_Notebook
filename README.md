@@ -4,7 +4,7 @@ Engineering 4 repo
 
 ### Hello Python
 #### Description
-In this assignment, we created a simple dice rolling program.
+In this assignment, we created a simple [dice rolling program](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/dice_roller.py).
 
 Here is a screenshot of this program in action:
 
@@ -16,7 +16,7 @@ This assignment was pretty easy. It involved a while loop with a couple of if st
 
 ### Calculator
 #### Description
-In this assignment, we created a simple calculator funciton that does different operations to the two input numbers. 
+In this assignment, we created a simple [calculator](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/Calculator.py) function that does different operations to the two input numbers. 
 
 Here is a screenshot of this program in action:
 
@@ -29,7 +29,7 @@ Also, through these assignments, I think I'm getting better at using git command
 
 ### Quadratic Solver
 #### Description
-In this assignment, we created a calculator to find the roots for any given quadratic. The program either returns two real roots or returns that there are no real roots. 
+In this assignment, we created a [quadratic calculator](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/quadratic_solver.py) to find the roots for any given quadratic. The program either returns two real roots or returns that there are no real roots. 
 
 Here is a screenshot of this program in action:
 
