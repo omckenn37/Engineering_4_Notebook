@@ -44,7 +44,7 @@ When coding this assignment I tried to create the least amount of variables poss
 ### Strings and Loops
 #### Description
 
-In this assignment, we created a program which takes in a string and prints out each letter in that string. It also prints a minus sign for every whitespace in that string.
+In this assignment, we created a [program which takes in a string and prints out each letter in that string](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/string_splitter.py). It also prints a minus sign for every whitespace in that string.
 
 Here is a screenshot of this program in action:
 
@@ -57,7 +57,7 @@ There were a bunch of different ways that this assignment could have been comple
 ### Hangman
 #### Description
 
-In this assignment, we created a 2 player hangman program. Player 1 picks a word while player 2 tries to guess the word. 
+In this assignment, we created a 2 player [hangman program](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/hangman.py). Player 1 picks a word while player 2 tries to guess the word. 
 
 #### Pictures 
 
