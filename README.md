@@ -61,11 +61,8 @@ In this assignment, we created a 2 player [hangman program](https://github.com/o
 
 #### Pictures 
 
-Here are some screenshots of this program in action:
-
 Here's what happens when player 2 guesses the right letters and wins the game:
 <img src="Python/media/hangman1.png" width="500">
-
 <img src="Python/media/hangman2.png" width="500">
 
 Here's a picture of the thing printed once you guess 5 wrong letters, as well as the image it is based off of:
