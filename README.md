@@ -67,7 +67,7 @@ Here's what happens when player 2 guesses the right letters and wins the game:
 
 <img src="Python/media/hangman2.png" width="500">
 
-Here's a picture of the thing printed once you guess 5 wrong letters, as well as the image it is based off of:
+Here's a picture of Graham that is printed once you guess 5 wrong letters, as well as the image it is based off of:
 
 <p float="left">
   <img src="Python/media/hangman4.png" width="500" />
