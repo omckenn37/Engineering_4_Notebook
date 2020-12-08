@@ -88,6 +88,10 @@ For this assignment, I also decided to use a text file to print a picture rather
 
 In this assignment, I connected to my pi via SSH. 
 
+Here is a picture of my wiring:
+
+<img src="Python/media/sshpic.JPG" width="300">
+
 #### Lessons Learned
 
 This assignment was super helpful because it showed me how to access my pi without having to deal with the uart cable. Now I can also put my pi anywhere that I want and still be able to access it. All I had to do was enable SSH on my pi, get the ip, and the connect to it in a seperate terminal window. Once I was connected I ran this simple [led blink]() program to make sure ev
