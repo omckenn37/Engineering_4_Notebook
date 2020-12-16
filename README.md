@@ -95,3 +95,25 @@ Here is a picture of my wiring:
 #### Lessons Learned
 
 This assignment was super helpful because it showed me how to access my pi without having to deal with the uart cable. Now I can also put my pi anywhere that I want and still be able to access it. All I had to do was enable SSH on my pi, get the ip, and the connect to it in a seperate terminal window. Once I was connected I ran this simple [led blink](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/led_blink.py) program to make sure everything was working properly.
+
+### Bash
+
+#### Description
+
+In this assignment, I used bash to blink two LED's on and off 10 times.
+
+I started by using the command line commands:
+
+
+
+
+'''
+gpio mode 29 out
+'''
+
+'''
+gpio write 29 1
+'''
+'''
+gpio write 29 0
+'''
