@@ -100,20 +100,22 @@ This assignment was super helpful because it showed me how to access my pi witho
 
 #### Description
 
-In this assignment, I used bash to blink two LED's on and off 10 times.
+In this assignment, I created a [blink.sh](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/blink.sh) bash file to blink two LED's on and off 10 times.
 
-I started by using the command line commands:
+I started by using the command line commands. First I used `gpio mode 29 out` to set 29 as an output. Then, I used `gpio write 29 1` to set that pin to high and `gpio write 29 0` to set the pin to low. 
+With that done, I just had to figure out how to do it in a bash file. I created a .sh file and put in a simple for loop which ran 10 times. Then, I had to find a way to blink an led in the bash file. Using [this website](https://www.teknotut.com/en/first-raspberry-pi-project-blink-led/#Blink_Project), I was able to figure out how to do this in a bash file. Also, instead of using two pins for the two different LEDs I just opted to wire both to the same pin for simplicity. I ended up with this code:
+```
+#!/bin/bash
 
+for i in {1..20} # for loop that runs 20 times
+do	
+	# for simplicity, I wired both LED's to one pin
+	/usr/bin/gpio toggle 29 # this toggles gpio29 on and off
+	sleep .5	
+done
+```
 
+#### Lessons Learned
 
+This assignment was a lot more difficult than I initially expected it to be. I had some difficulty just running the command line commands; I think this was because I kept confusing the physical pin with the gpio pin and vice versa. After finally getting that to work, I tried using those commands in the bash file. Obviously that didn't work. After looking on the internet for a while, I came across the previously linked website. This was super helpful because it outlined pretty much the exact thing I was trying to do. After finding this, it was smooth sailing. The only other issue I had was the LEDs not blinking enough. When the for loop ran 10 times, they would only blink 5 times. I quickly realized this was because the toggle command just toggles to the opposite state that the pin is currently at. So, this means that for every 2 times through the loop, there is only one blink. All I did was change the loop to run 20 times and I was done. 
 
-'''
-gpio mode 29 out
-'''
-
-'''
-gpio write 29 1
-'''
-'''
-gpio write 29 0
-'''
