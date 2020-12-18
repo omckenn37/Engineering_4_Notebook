@@ -127,7 +127,7 @@ In this assignment, I created a simple [python script that blinks two LEDs](http
 
 This assignment was pretty simple. I just wired up two LEDs to different pins a wrote a simple script to blink them a few times. In the code, I created list `leds = [38, 40]` which stored two gpio pins. Then, I found out that you could set two different pin outputs in one line with `GPIO.setup(leds, GPIO.OUT)`. This kept me from having to make seperate lines to turn each led off and on. 
 
-This allowed for the main loop of my coed to look like this:
+This allowed for the main loop of my code to look like this:
 ```python3
 for i in range(0, 10): # blinks the LED's 10 times
 	GPIO.output(leds, 1)
