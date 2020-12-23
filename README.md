@@ -104,7 +104,7 @@ In this assignment, I created a [blink.sh](https://github.com/omckenn37/Engineer
 
 I started by using the command line commands. First I used `gpio mode 29 out` to set 29 as an output. Then, I used `gpio write 29 1` to set that pin to high and `gpio write 29 0` to set the pin to low. 
 With that done, I just had to figure out how to do it in a bash file. I created a .sh file and put in a simple for loop which ran 10 times. Then, I had to find a way to blink an led in the bash file. Using [this website](https://www.teknotut.com/en/first-raspberry-pi-project-blink-led/#Blink_Project), I was able to figure out how to do this in a bash file. Also, instead of using two pins for the two different LEDs I just opted to wire both to the same pin for simplicity. I ended up with this code:
-```
+```python3
 #!/bin/bash
 
 for i in {1..20} # for loop that runs 20 times
@@ -119,3 +119,23 @@ done
 
 This assignment was a lot more difficult than I initially expected it to be. I had some difficulty just running the command line commands; I think this was because I kept confusing the physical pin with the gpio pin and vice versa. After finally getting that to work, I tried using those commands in the bash file. Obviously that didn't work. After looking on the internet for a while, I came across the previously linked website. This was super helpful because it outlined pretty much the exact thing I was trying to do. After finding this, it was smooth sailing. The only other issue I had was the LEDs not blinking enough. When the for loop ran 10 times, they would only blink 5 times. I quickly realized this was because the toggle command just toggles to the opposite state that the pin is currently at. So, this means that for every 2 times through the loop, there is only one blink. All I did was change the loop to run 20 times and I was done. 
 
+### GPIO Pins
+
+#### Description
+
+In this assignment, I created a simple [python script that blinks two LEDs](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/led_blink.py) 10 times.
+
+This assignment was pretty simple. I just wired up two LEDs to different pins a wrote a simple script to blink them a few times. In the code, I created list `leds = [38, 40]` which stored two gpio pins. Then, I found out that you could set two different pin outputs in one line with `GPIO.setup(leds, GPIO.OUT)`. This kept me from having to make seperate lines to turn each led off and on. 
+
+This allowed for the main loop of my code to look like this:
+```python3
+for i in range(0, 10): # blinks the LED's 10 times
+	GPIO.output(leds, 1)
+	time.sleep(0.5)
+	GPIO.output(leds, 0)
+	time.sleep(0.5)
+```
+
+#### Lessons Learned
+
+One weird thing that has happened a few times are the warning messages that you ocasionally get when running python scripts that use GPIO pins. They don't actually stop the file from running, but can be kind of annoying especially if you are trying to print out other stuff in the terminal. This seems to happen after I have used ctrl + c to stop a script before it is completely finished. The messages basically tell you that those pins are already in use, which isn't actually true but the pi thinks that they are still in use because it never got to finish running the script. To fix this, I used the `GPIO.setwarnings(False)` command which turns off the warnings. 
