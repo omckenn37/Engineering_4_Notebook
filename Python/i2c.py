@@ -29,7 +29,7 @@ x = padding
 font = ImageFont.load_default()
 
 while True:
-	accel, mag = accelerometer.read() # gets accelerometer data
+	accel = accelerometer.read() # gets accelerometer data
 	accel_x, accel_y, accel_z = accel
 	
 	draw.text((x, top), "Accelerometer Data:", font=font, fill=255) # draws header
