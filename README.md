@@ -139,3 +139,30 @@ for i in range(0, 10): # blinks the LED's 10 times
 #### Lessons Learned
 
 One weird thing that has happened a few times are the warning messages that you ocasionally get when running python scripts that use GPIO pins. They don't actually stop the file from running, but can be kind of annoying especially if you are trying to print out other stuff in the terminal. This seems to happen after I have used ctrl + c to stop a script before it is completely finished. The messages basically tell you that those pins are already in use, which isn't actually true but the pi thinks that they are still in use because it never got to finish running the script. To fix this, I used the `GPIO.setwarnings(False)` command which turns off the warnings. 
+
+### I2C
+
+#### Description
+
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/i2c.py), I used the SDA and SCL pins on my raspberry pi to get data from an accelerometer and display it on a SSD1306 Oled display. This is called i2c communication because it enables multiple devices to be run on just two pins, those being the SDA (serial data) and SCL (serial clock) pins. 
+
+This assignment took a bit of time. The main struggle was figuring out all of the display commands and initial setup. To figure this stuff out, I pretty much relied on the shapes.py file that was in the examples folder in the display library. By looking at the setup that was included in that file, I figured out what I needed to have in my code. Once I had that stuff down, it was just a matter of formatting the text so that it looked good and displayed the correct values. 
+To keep my acceleration values up to date, I sort of "refreshed" that portion of the screen each time the loop runs. To do this, I just printed a black rectangle over the old values and then displayed the new values in the exact same spot:
+
+```python
+draw.rectangle((100, 12, 55, 50), outline=0, fill=0) # "refreshes" the xyz values so they can be updated
+disp.image(image)
+disp.display()
+```
+
+This keeps the acceleration values up to date. 
+
+#### Lessons Learned
+
+One useful python feature that was useful when printing the text was the `.format()` command. This helped me print my values without having to do the weird "+" in between strings and floats. Here is my exact usage of this feature:
+```python
+draw.text((x, top + 10), "Accel x ={0}".format(round(accel_x / 100, 3)), font=font, fill=255) # draws x 
+draw.text((x, top + 20), "Accel y ={0}".format(round(accel_y / 100, 3)), font=font, fill=255) # draws y
+draw.text((x, top + 30), "Accel z ={0}".format(round(accel_z / 100, 3)), font=font, fill=255) # draws z
+```
+My main takeaway from this assignment was how to use the oled screen and how to set it up. I learned that in order to use the display, commands like `image = Image.new('1', (width, height))` and `draw = ImageDraw.Draw(image)` are necessary. In terms of the acceleromter, the only real command that is necessary is the `accelerometer.read()` command which gets the acceleration values for x, y and z. 
