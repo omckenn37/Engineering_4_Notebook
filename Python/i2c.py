@@ -29,8 +29,9 @@ x = padding
 font = ImageFont.load_default()
 
 while True:
-	accel = accelerometer.read() # gets accelerometer data
+	accel, mag = accelerometer.read() # gets accelerometer data
 	accel_x, accel_y, accel_z = accel
+	mag_x, mag_y, mag_z = mag
 	
 	draw.text((x, top), "Accelerometer Data:", font=font, fill=255) # draws header
 	draw.text((x, top + 10), "Accel x ={0}".format(round(accel_x / 100, 3)), font=font, fill=255) # draws x 
