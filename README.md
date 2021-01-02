@@ -82,6 +82,8 @@ This assignment was definitely harder than the others. It was quite a bit longer
 
 For this assignment, I also decided to use a text file to print a picture rather than make an array or list and print sections of that. I figured it would be easier and cleaner to use a text file, plus it was easier to make this text file anything that I wanted it to be. I used a [image to ASCII converter](https://manytools.org/hacker-tools/convert-images-to-ascii-art/) to convert the picture of Graham into ASCII characters that could be printed in a terminal window. Once I had this file, I added it to my Python folder via file upload and pulled those changes to my pi so the file was on my pi. After that, all I had to do was figure out how to use the built in text file commands that python has such as open() and readline().
 
+## GPIO Assignments
+
 ### SSH
 
 #### Description
@@ -166,3 +168,17 @@ draw.text((x, top + 20), "Accel y ={0}".format(round(accel_y / 100, 3)), font=fo
 draw.text((x, top + 30), "Accel z ={0}".format(round(accel_z / 100, 3)), font=font, fill=255) # draws z
 ```
 My main takeaway from this assignment was how to use the oled screen and how to set it up. I learned that in order to use the display, commands like `image = Image.new('1', (width, height))` and `draw = ImageDraw.Draw(image)` are necessary. In terms of the acceleromter, the only real command that is necessary is the `accelerometer.read()` command which gets the acceleration values for x, y and z. 
+
+### Flask
+
+#### Description
+
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/Flask/hello_world/app.py), I turned my pi into a web server. This assignment was a simple introduction to flask and the basics of how it works. Even though all we did was display hello world on a webpage, this has me a bit excited because I'm already thinking of all the cool things that could be done with this. 
+
+Here's a screenshot of what the webpage looked like:
+
+<img src="Python/media/flask.png" width="300">
+
+#### Lessons Learned
+
+This assignment was a good introduction to flask; now, I know how to do the basic setup to make my pi a web server. What I am most interested about regarding this assignment and flask as a whole is the usage of it with the gpio pins. It would be pretty cool to be able to control the pi's gpio pins form any computer thats on the same network. I think its also cool that you could pull up this web server on multiple different computers and have the pi update the webpage on all of them. I'm not quite sure how I will implement this in my project yet, but I definitely want to use it. 
