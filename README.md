@@ -148,6 +148,10 @@ One weird thing that has happened a few times are the warning messages that you 
 
 In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/i2c.py), I used the SDA and SCL pins on my raspberry pi to get data from an accelerometer and display it on a SSD1306 Oled display. This is called i2c communication because it enables multiple devices to be run on just two pins, those being the SDA (serial data) and SCL (serial clock) pins. 
 
+Here's a picture of this program in action:
+
+<img src="Python/media/i2c.JPG" width="300">
+
 This assignment took a bit of time. The main struggle was figuring out all of the display commands and initial setup. To figure this stuff out, I pretty much relied on the shapes.py file that was in the examples folder in the display library. By looking at the setup that was included in that file, I figured out what I needed to have in my code. Once I had that stuff down, it was just a matter of formatting the text so that it looked good and displayed the correct values. 
 To keep my acceleration values up to date, I sort of "refreshed" that portion of the screen each time the loop runs. To do this, I just printed a black rectangle over the old values and then displayed the new values in the exact same spot:
 
