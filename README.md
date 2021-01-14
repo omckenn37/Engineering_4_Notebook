@@ -186,3 +186,17 @@ Here's a screenshot of what the webpage looked like:
 #### Lessons Learned
 
 This assignment was a good introduction to flask; now, I know how to do the basic setup to make my pi a web server. What I am most interested about regarding this assignment and flask as a whole is the usage of it with the gpio pins. It would be pretty cool to be able to control the pi's gpio pins form any computer thats on the same network. I think its also cool that you could pull up this web server on multiple different computers and have the pi update the webpage on all of them. I'm not quite sure how I will implement this in my project yet, but I definitely want to use it. 
+
+### GPIO Pins - Flask
+
+#### Description
+
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/tree/main/Python/Flask/gpio), I used flask to create a webpage that enabled me to control LED's over the internet. Essentially, I created a webpage that displayed two buttons (on/off) that you could click and turn two LED's on or off. 
+
+Here's a screenshot of what the webpage looked like:
+
+<img src="Python/media/gpioflask.png" width="400">
+
+#### Lessons Learned
+
+This assignment was a bit challenging. The hard part was making the python file and the html/ccs stuff work together so that everything worked properly. 
