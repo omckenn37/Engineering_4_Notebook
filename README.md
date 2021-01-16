@@ -173,6 +173,22 @@ draw.text((x, top + 30), "Accel z ={0}".format(round(accel_z / 100, 3)), font=fo
 ```
 My main takeaway from this assignment was how to use the oled screen and how to set it up. I learned that in order to use the display, commands like `image = Image.new('1', (width, height))` and `draw = ImageDraw.Draw(image)` are necessary. In terms of the acceleromter, the only real command that is necessary is the `accelerometer.read()` command which gets the acceleration values for x, y and z. 
 
+### Headless
+
+#### Description
+
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/Python/headless.py), I created a white dot that moves on the oled display based off of values gathered by an accelerometer. Additionally, I made it so the file runs when the pi boots, or whenever it has power. 
+
+Here's a picture of the program in action, as well as a link to a video of it:
+
+<img src="Python/media/headless.JPG" width="300">
+
+Video link [here](https://youtu.be/wGENBSkXhBg)
+
+
+
+#### Lessons Learned
+
 ### Flask
 
 #### Description
