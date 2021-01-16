@@ -186,3 +186,36 @@ Here's a screenshot of what the webpage looked like:
 #### Lessons Learned
 
 This assignment was a good introduction to flask; now, I know how to do the basic setup to make my pi a web server. What I am most interested about regarding this assignment and flask as a whole is the usage of it with the gpio pins. It would be pretty cool to be able to control the pi's gpio pins form any computer thats on the same network. I think its also cool that you could pull up this web server on multiple different computers and have the pi update the webpage on all of them. I'm not quite sure how I will implement this in my project yet, but I definitely want to use it. 
+
+### GPIO Pins - Flask
+
+#### Description
+
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/tree/main/Python/Flask/gpio), I used flask to create a webpage that enabled me to control LED's over the internet. Essentially, I created a webpage that displayed two buttons (on/off) that you could click and turn two LED's on or off. 
+
+Here's a screenshot of what the webpage looked like:
+
+<img src="Python/media/gpioflask.png" width="400">
+
+To check for button presses on the web page, I used this code in my app.py file:
+```python
+if request.method == 'POST': # if the request type is a post, so someone clicking one of the buttons
+	if request.form.get('btn1') == 'btn1': # if its on button, turn LED's on
+		GPIO.output(leds, GPIO.HIGH)	
+	elif request.form.get('btn2') == 'btn2': # if its off button, turn LED's off
+		GPIO.output(leds, GPIO.LOW)
+```
+
+To format the buttons, I used some super basic css. All I wanted to do was change the color of the buttons, the size, and the size of the text. To do this I used this bit of css:
+```css
+.btn1 {background-color: #0FDB1D; 		
+	height: 150px;
+	width: 300px;
+	font-size: 50px;
+	} 
+```
+The colors in css are written in hexadecimal, so I used this [hexadecimal color picker](https://htmlcolorcodes.com/color-picker/) to get the colors I wanted. 
+
+#### Lessons Learned
+
+This assignment was a bit challenging. The hard part was making the python file and the html/css stuff work together so that everything worked properly. I had a few issues with the ```request.form.get('btn1') == 'btn1'``` part of my .py file. It turns out that I didn't have my btn1 name matching with the name in my html file, so it didn't recognize that the button was being pressed. All I had to do was change the names so they matched and it worked. I think I figured out how I am going to use flask with my project; after launching the pi with the trebuchet, I'm going to send the accelerometer and altimeter data to a webpage that displays the projectile's maxium height, distance covered, and other statistics about its flight. Also, I think it would be cool to have a "Launch" button on the webpage that fires the projectile when pressed. 
