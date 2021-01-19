@@ -34,8 +34,8 @@ while True:
 	mag_x, mag_y, mag_z = mag
 	
 	# these lines get the x and y position for the dot based on the accelerometer values, more info on these in the readme
-	x_pos = 128 - (accel_y / 100) / 15 * 128 - 64 
-	y_pos = 64 - (accel_x / 100) / 15 * 64 - 32
+	x_pos = 64 - (accel_y / 100) / 15 * 128
+	y_pos = 32 - (accel_x / 100) / 15 * 64 
 		
 	#print(x_pos, y_pos)
 	# if you uncomment this line, you can see that when the accelerometer is in a neutral position,
@@ -45,8 +45,4 @@ while True:
 	
 	disp.image(image)
 	disp.display() # displays the dot
-
-	
-	
-	
 	
