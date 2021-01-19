@@ -185,6 +185,13 @@ Here's a picture of the program in action, as well as a link to a video of it:
 
 Video link [here](https://youtu.be/wGENBSkXhBg)
 
+Making the dot move was a lot easier to make happen then I initially thought, although I didn't really know what I was doing. At first, I thought I might have to have a couple of if statements to figure out if the x and y values are positive or negative. Then, inside the if statements I could either increase or decrease the x and y position values to make the dot move. This worked ok, but it wasn't super responsive and it had trouble returning to the middle when the accelerometer was in a neutral position. After thinking about it for a bit, I realized I could just update the each position in one line since everything is inside a while loop. Thats how I ended up with this:
+```python3
+x_pos = 64 - (accel_y / 100) / 15 * 128 
+y_pos = 32 - (accel_x / 100) / 15 * 64
+```
+The accelerometer y value actually corresponds to the x position of the dot just based off of the way I have the accelerometer set up on breadboard. The first numbers on the lines are 64 and 32; this represents the middle of the screen. The next part converts the accelerometer values into a number greater than -10 and less than 10. After that, this is divided by 15 and multiplied by 128 (more on this later). For example, a y value of 800 would set the x position to roughly 13 because ``` 64 - (600 / 100) / 15 * 128 = 12.8 ```. Okay, if you leave out the / 15 part you will get a x position of -960. Obviously, this puts the dot way off the screen. A value of 100 gets you an x position of -64 and a value of 51.2. You can see that this last position actually puts the dot on the screen, but as soon as the y values increase the position value increases too fast. To compensate for this, I added some division. This essentially "slows" the rate at which the position increases. The value itself is slightly arbitrary; I just picked 15 after a bit of manual testing with other values because it seemed to work well. A smaller division value makes the dot position increase faster, while a larger division value makes the dot position increase slower.
+
 
 
 #### Lessons Learned
