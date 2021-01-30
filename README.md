@@ -242,3 +242,40 @@ The colors in css are written in hexadecimal, so I used this [hexadecimal color 
 #### Lessons Learned
 
 This assignment was a bit challenging. The hard part was making the python file and the html/css stuff work together so that everything worked properly. I had a few issues with the ```request.form.get('btn1') == 'btn1'``` part of my .py file. It turns out that I didn't have my btn1 name matching with the name in my html file, so it didn't recognize that the button was being pressed. All I had to do was change the names so they matched and it worked. I think I figured out how I am going to use flask with my project; after launching the pi with the trebuchet, I'm going to send the accelerometer and altimeter data to a webpage that displays the projectile's maxium height, distance covered, and other statistics about its flight. Also, I think it would be cool to have a "Launch" button on the webpage that fires the projectile when pressed. 
+
+### Pi Camera
+
+#### Camera Test 1
+
+##### Description
+
+In [this assignment](), I used the raspberry pi camera module to take a picture and created indicators to show when the picture had been taken. My camera module seemed to be broken so I worked with [Lukas Hange](https://github.com/lhange42) on this assignment as he had a functioning camera. 
+
+Here's the picture that was taken with the camera, as well as a [link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to this picture on Lukas' github. 
+
+<img src="Python/media/camera_test.jpg" width="400">
+
+##### Lessons Learned
+
+This assignment taught me how to do the basic setup for a pi camera. The important commands seem to be ```camera.resolution = ()```, ```camera.start_preview()```, and ```camera.capture()```. These commands let you set the resolution of the camera, start up the camera, and then take a picture with the camera. To use the ```camera.capture()``` command, you must pass in the name of the picture you want taken. 
+
+#### Camera Test 2
+
+##### Description
+
+In [this assignment](), I used the raspberry pi camera module to take a picture and then apply 5 different filters to the picture. 
+
+Here are the pictures with their respective filters:
+
+<p float="left">
+  <img src="Python/media/camera_test_none.jpg" width="175" />
+  <img src="Python/media/camera_test_washedout.jpg" width="175" />
+  <img src="Python/media/camera_test_sketch.jpg" width="175" />
+  <img src="Python/media/camera_test_colorswap.jpg" width="175" />
+  <img src="Python/media/camera_test_cartoon.jpg" width="175" />
+</p>
+
+[Link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to these pictures.
+
+
+##### Lessons Learned
