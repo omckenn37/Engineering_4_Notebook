@@ -245,11 +245,13 @@ This assignment was a bit challenging. The hard part was making the python file 
 
 ### Pi Camera
 
+My camera module seemed to be broken so I worked with [Lukas Hange](https://github.com/lhange42) on this assignment as he had a functioning camera. 
+
 #### Camera Test 1
 
 ##### Description
 
-In [this assignment](), I used the raspberry pi camera module to take a picture and created indicators to show when the picture had been taken. My camera module seemed to be broken so I worked with [Lukas Hange](https://github.com/lhange42) on this assignment as he had a functioning camera. 
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/pictures/camera_test01.py), I used the raspberry pi camera module to take a picture and created indicators to show when the picture had been taken. 
 
 Here's the picture that was taken with the camera, as well as a [link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to this picture on Lukas' github. 
 
@@ -263,7 +265,7 @@ This assignment taught me how to do the basic setup for a pi camera. The importa
 
 ##### Description
 
-In [this assignment](), I used the raspberry pi camera module to take 5 different pictures and apply 5 different filters to the pictures. 
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/pictures/camera_test02.py), I used the raspberry pi camera module to take 5 different pictures and apply 5 different filters to the pictures. 
 
 Here are the pictures with their respective filters:
 
@@ -295,13 +297,27 @@ The main thing I learned from this assignment was how to apply different filters
 
 ### Copypasta
 
+My camera module seemed to be broken so I worked with [Lukas Hange](https://github.com/lhange42) on this assignment as he had a functioning camera. 
+
 #### Parent Detector
 
 ##### Description
 
-In this assignment, 
+In [this assignment](https://github.com/omckenn37/Engineering_4_Notebook/blob/main/pictures/parent_detector.py), I had to start taking a video when the motion sensor was triggered. I also got the current date and time and added it to the video file name so that there can be multiple videos. 
+
+The main body of this assignment was just a ```while True:``` loop which waited for motion to be detected by the motion sensor. Once detected, the camera would start recording. To store each video file under a different name that included the date and time, I used these lines:
+
+```python
+import datetime
+now = datetime.datetime.now() # gets current date and time
+filename = "intruder_" + str(now).replace(" ", "_") + ".h264" # creates filename that changes based on date and time
+```
+These lines return something similar to this: ```intruder_2021-01-31_03:53:02.553188.h264```
+
 
 ##### Lessons Learned
+
+In this assignment, I learned how to use the motion sensor as well as how to take videos with the pi camera. To use the motion sensor, you must import the library and then set it up with ```pir = MotionSensor(4)```, the 4 being the pin. Then, inside the ```while True:``` loop, I used ```pir.wait_for_motion()```. This command is pretty much an infinite delay until the motion sensor is triggered. To detect the end of motion, I used ```pir.wait_for_no_motion()``` which checks for no motion. 
 
 #### Stop Motion Animation
 
