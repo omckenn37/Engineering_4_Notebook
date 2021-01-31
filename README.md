@@ -185,9 +185,16 @@ Here's a picture of the program in action, as well as a link to a video of it:
 
 Video link [here](https://youtu.be/wGENBSkXhBg)
 
-
+Making the dot move was a lot easier to make happen then I initially thought, although I didn't really know what I was doing. At first, I thought I might have to have a couple of if statements to figure out if the x and y values are positive or negative. Then, inside the if statements I could either increase or decrease the x and y position values to make the dot move. This worked ok, but it wasn't super responsive and it had trouble returning to the middle when the accelerometer was in a neutral position. After thinking about it for a bit, I realized I could just update the each position in one line since everything is inside a while loop. Thats how I ended up with this:
+```python3
+x_pos = 64 - (accel_y / 100) / 15 * 128 
+y_pos = 32 - (accel_x / 100) / 15 * 64
+```
+The accelerometer y value actually corresponds to the x position of the dot just based off of the way I have the accelerometer set up on breadboard. The first numbers on the lines are 64 and 32; this represents the middle of the screen. The next part converts the accelerometer values into a number greater than -10 and less than 10. After that, this is divided by 15 and multiplied by 128 (more on this later). For example, a y value of 600 would set the x position to roughly 13 because ``` 64 - (600 / 100) / 15 * 128 = 12.8 ```. Okay, if you leave out the / 15 part you will get a x position of -704. Obviously, this puts the dot way off the screen. A value of 100 gets you an x position of -64 and a value of 10 gets you an x position of 51.2. You can see that this last position actually puts the dot on the screen, but as soon as the y values increase the position value increases too fast. To compensate for this, I added some division. This essentially "slows" the rate at which the position increases. The value itself is slightly arbitrary; I just picked 15 after a bit of manual testing with other values because it seemed to work well. A smaller division value makes the dot position increase faster, while a larger division value makes the dot position increase slower.
 
 #### Lessons Learned
+
+In addition to making the white dot move, I learned how to run scripts on the pi without having to be connected via ssh or anything else. This is probably the more important thing that I took away from this assignment considering I probably wont be using the white dot thing again. To run the pi headless is actually pretty simple. To figure this out, I used [this website](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/) which lists a few different ways you can run files on boot. I picked the easiest method which involves editing the rc.local file. I opened this file and typed ```sudo sudo python /home/pi/Documents/Engineering_4_Notebook/Python/headless.py &``` right above the bottom line that contains ```exit 0```. The previous line is the exact path of my headless.py file. Once I typed this, I saved, exited, unplugged, and plugged back in my pi. After a few seconds, headless.py began to run. 
 
 ### Flask
 
@@ -235,3 +242,53 @@ The colors in css are written in hexadecimal, so I used this [hexadecimal color 
 #### Lessons Learned
 
 This assignment was a bit challenging. The hard part was making the python file and the html/css stuff work together so that everything worked properly. I had a few issues with the ```request.form.get('btn1') == 'btn1'``` part of my .py file. It turns out that I didn't have my btn1 name matching with the name in my html file, so it didn't recognize that the button was being pressed. All I had to do was change the names so they matched and it worked. I think I figured out how I am going to use flask with my project; after launching the pi with the trebuchet, I'm going to send the accelerometer and altimeter data to a webpage that displays the projectile's maxium height, distance covered, and other statistics about its flight. Also, I think it would be cool to have a "Launch" button on the webpage that fires the projectile when pressed. 
+
+### Pi Camera
+
+#### Camera Test 1
+
+##### Description
+
+In [this assignment](), I used the raspberry pi camera module to take a picture and created indicators to show when the picture had been taken. My camera module seemed to be broken so I worked with [Lukas Hange](https://github.com/lhange42) on this assignment as he had a functioning camera. 
+
+Here's the picture that was taken with the camera, as well as a [link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to this picture on Lukas' github. 
+
+<img src="Python/media/camera_test.jpg" width="400">
+
+##### Lessons Learned
+
+This assignment taught me how to do the basic setup for a pi camera. The important commands seem to be ```camera.resolution = ()```, ```camera.start_preview()```, and ```camera.capture()```. These commands let you set the resolution of the camera, start up the camera, and then take a picture with the camera. To use the ```camera.capture()``` command, you must pass in the name of the picture you want taken. 
+
+#### Camera Test 2
+
+##### Description
+
+In [this assignment](), I used the raspberry pi camera module to take 5 different pictures and apply 5 different filters to the pictures. 
+
+Here are the pictures with their respective filters:
+
+<p float="left">
+  <img src="Python/media/camera_test_none.jpg" width="175" />
+  <img src="Python/media/camera_test_washedout.jpg" width="175" />
+  <img src="Python/media/camera_test_sketch.jpg" width="175" />
+  <img src="Python/media/camera_test_colorswap.jpg" width="175" />
+  <img src="Python/media/camera_test_cartoon.jpg" width="175" />
+</p>
+
+[Link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to these pictures.
+
+To assign each picture and assign it a filter, I used a for loop that ran 5 times. Here's what part of this code looks like:
+
+```python
+for i in range(5):
+	time.sleep(2)
+
+	if i == 0:
+		camera.image_effect = 'colorswap'
+		camera.capture('camera_test_colorswap.jpg')
+```
+Under this, there were 4 more if statements to check for different values of i and take different pictures with different filters. 
+
+##### Lessons Learned
+
+The main thing I learned from this assignment was how to apply different filters to pictures. This is acomplished by assigning ```camera.image_effect``` to a specific value. Other than that, this assignment was pretty standard. 
