@@ -263,7 +263,7 @@ This assignment taught me how to do the basic setup for a pi camera. The importa
 
 ##### Description
 
-In [this assignment](), I used the raspberry pi camera module to take a picture and then apply 5 different filters to the picture. 
+In [this assignment](), I used the raspberry pi camera module to take 5 different pictures and apply 5 different filters to the pictures. 
 
 Here are the pictures with their respective filters:
 
@@ -277,5 +277,18 @@ Here are the pictures with their respective filters:
 
 [Link](https://github.com/lhange42/Engineering_4_Notebook/tree/main/Pictures) to these pictures.
 
+To assign each picture and assign it a filter, I used a for loop that ran 5 times. Here's what part of this code looks like:
+
+```python
+for i in range(5):
+	time.sleep(2)
+
+	if i == 0:
+		camera.image_effect = 'colorswap'
+		camera.capture('camera_test_colorswap.jpg')
+```
+Under this, there were 4 more if statements to check for different values of i and take different pictures with different filters. 
 
 ##### Lessons Learned
+
+The main thing I learned from this assignment was how to apply different filters to pictures. This is acomplished by assigning ```camera.image_effect``` to a specific value. Other than that, this assignment was pretty standard. 
