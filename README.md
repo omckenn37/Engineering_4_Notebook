@@ -292,3 +292,19 @@ Under this, there were 4 more if statements to check for different values of i a
 ##### Lessons Learned
 
 The main thing I learned from this assignment was how to apply different filters to pictures. This is acomplished by assigning ```camera.image_effect``` to a specific value. Other than that, this assignment was pretty standard. 
+
+### Copypasta
+
+#### Parent Detector
+
+##### Description
+
+In this assignment, 
+
+##### Lessons Learned
+
+#### Stop Motion Animation
+
+##### Description
+
+##### Lessons Learned
